@@ -115,8 +115,6 @@ cat <<EOF >index.html
     @import url("$GF");
 html {
     position: relative;
-    min-height: ${HEIGHT}px;
-    min-width: ${WIDTH}px;
     height: 100%;
 }
 
@@ -129,7 +127,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height:800px;
 }
 h1 {
   font-size: ${SIZE}px;
@@ -138,17 +135,17 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  padding: 100px;
+  padding: 0 100px;
   text-align:center;
 }
 </style>
 </head>
 <body>
-<h1 class="center">$TEXT</h1>
+<h1>$TEXT</h1>
 </body>
 </html>
 EOF
 
-wkhtmltoimage --enable-local-file-access ./index.html "$OUTPUT".jpg >/dev/null 2>&1 || exit
+wkhtmltoimage --width "$WIDTH" --height "$HEIGHT" --enable-local-file-access ./index.html "$OUTPUT".jpg >/dev/null 2>&1 || exit
 
 echo "Done!"
