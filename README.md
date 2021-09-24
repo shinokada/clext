@@ -1,9 +1,11 @@
-# clext 
+# Cliptext
+
+[Medium article]()
 
 ## Overview
 
 ```sh
-wkhtmltoimage --enable-local-file-access --width 800 ./index.html my2.jpg
+cliptext -t "My Text to Clip"
 ```
 
 Cliped image 1920x1080

@@ -3,7 +3,7 @@
 set -eu
 
 # shellcheck disable=SC2034
-VERSION="0.0.1"
+VERSION="0.0.2"
 FONT_ATT=''
 FONT_WEIGHT='500 | 700 | 900'
 
@@ -67,7 +67,7 @@ parser_definition() {
     param TEXT -t --text init:="It's Friday!" -- "-t 'Your Text to print'"
     param FONT -f --font init:="Luckiest Guy" -- "-f 'Font Name'"
     param SIZE -s --size init:=140 -- "-s 240 will set CSS font-size: 240px"
-    param BKIMG -i --image init:="./flower.jpg" -- "-i background-image.jpg"
+    param BKIMG -i --image init:="${script_dir}/flower.jpg" -- "-i background-image.jpg"
     param OUTPUT -o --output init:="myimg" -- "-o output-file-name"
     param WIDTH -w --width init:=1920 -- "-w 1240. The default width is 1920px."
     param HEIGHT -h --height init:=1080 -- "-h 800. The default height is 1080px."
